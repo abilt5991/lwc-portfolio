@@ -1,18 +1,15 @@
-# Salesforce DX Project: Next Steps
+# Salesforce LWC Portfolio
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A collection of Lightning Web Component projects built while learning Salesforce development — from basic to advanced.
 
-## How Do You Plan to Deploy Your Changes?
+## Projects
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+| # | Project | Level | Description |
+|---|---------|-------|-------------|
+| 1 | [Account Viewer Card](force-app/main/default/lwc/accountViewerCard/README.md) | Basic | Displays Account fields using LDS |
+    ## Screenshot
+    ![Account Viewer Card](images/lwc1-AccountViewerCard.png)
+| 2 | To-Do Task Manager | Basic | Interactive task list with state and events |
+| 3 | Contact Search & Filter | Intermediate | Real-time search using Apex |
+| 4 | Opportunity Kanban | Intermediate | Drag and drop board with DML |
+| 5 | Sales Dashboard | Advanced | Multi-component dashboard with charts |
