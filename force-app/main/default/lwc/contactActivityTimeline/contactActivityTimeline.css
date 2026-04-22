@@ -1,0 +1,10 @@
+.task-item {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+.task-subject {
+    font-size: 14px;
+    font-weight: 600;
+}

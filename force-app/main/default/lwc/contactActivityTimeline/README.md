@@ -1,9 +1,19 @@
-# Project 1 — Account Viewer Card
+# Project 2 — To-Do Task Manager
 
-A Lightning Web Component that displays key Account fields on a Salesforce record page using Lightning Data Service (LDS).
+A Lightning Web Component that displays all Tasks on a Salesforce Contact record page using Apex, SOQL, LWC, LDS, SLDS.
 
 ## Screenshot
-![Account Viewer Card](images/lwc1-AccountViewerCard.png)
+Loading State
+![Tasks - Loading State](images/loading_state.png)
+
+Task List
+![Tasks - Task List](images/tasks_list.png)
+
+Empty State
+![Tasks - Empty State](images/empty_state.png)
+
+Error State
+![Tasks - Error State](images/error_state.png)
 
 ## What I Learned
 - LWC file structure (HTML, JS, XML)
@@ -14,14 +24,16 @@ A Lightning Web Component that displays key Account fields on a Salesforce recor
 - Adding a component to a Lightning App Builder page
 
 ## Tech Stack
+- Apex Controller
+- SOQL to fetch Tasks of a specific Contact
 - Lightning Web Components (LWC)
 - Lightning Data Service (LDS)
 - SLDS (Salesforce Lightning Design System)
 
 ## Component
-`accountViewerCard` — placed on Account record pages
+`contactActivityTimeline` — placed on Contact record pages
 
 ## How to Deploy
 1. Authorise your Salesforce orgcd
 2. Deploy the component
-3. Add to an Account record page via Lightning App Builder
+3. Add to a Contact record page via Lightning App Builder

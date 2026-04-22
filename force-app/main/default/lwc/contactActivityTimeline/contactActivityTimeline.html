@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Activity Timeline" icon-name="standard:task">
+        <div class="slds-var-p-around_medium">
+
+            <!-- Loading state -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <!-- Error state -->
+            <template if:true={error}>
+                <p class="slds-text-color_error">Something went wrong loading tasks.</p>
+            </template>
+
+            <!-- Empty state -->
+            <template if:true={isEmpty}>
+                <p class="slds-text-color_weak">No tasks found for this Contact.</p>
+            </template>
+
+            <!-- Task list -->
+            <template if:true={tasks}>
+                <template for:each={tasks} for:item="task">
+                    <div key={task.Id} class="task-item slds-theme_shade">
+
+                        <!-- Header row -->
+                        <div class="slds-grid slds-media_center slds-gutters_small slds-var-m-bottom_x-small">
+                            <span class={priorityClass}>{task.Priority}</span>
+                            <span class="slds-text-color_default task-subject">{task.Subject}</span>
+                        </div>
+
+                        <!-- Details row -->
+                        <ul class="slds-list_horizontal slds-has-dividers_right">
+                            <li class="slds-item slds-text-color_weak">Due: {task.ActivityDate}</li>
+                            <li class="slds-item slds-text-color_weak">Status: {task.Status}</li>
+                        </ul>
+
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
