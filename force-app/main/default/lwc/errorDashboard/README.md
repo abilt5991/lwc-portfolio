@@ -1,4 +1,4 @@
-# System Diagnostics Dashboard (Agentforce Integrated)
+# System Diagnostics (Agentforce Integrated)
 
 An advanced Salesforce Lightning Web Component (LWC) and AI Agent application designed to monitor, filter, and autonomously diagnose system errors. 
 
