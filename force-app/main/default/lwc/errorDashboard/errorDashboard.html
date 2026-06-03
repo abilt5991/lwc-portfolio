@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="High Severity System Alerts" icon-name="standard:system_and_global_variable">
+        
+        <lightning-button-icon 
+            icon-name="utility:refresh" 
+            slot="actions" 
+            alternative-text="Refresh Feed" 
+            onclick={handleRefresh}>
+        </lightning-button-icon>
+
+        <div class="slds-var-p-around_medium">
+            
+            <template if:true={hasLogs}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={logs}
+                    columns={columns}
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+
+            <template if:false={hasLogs}>
+                <div class="slds-text-align_center slds-var-p-around_xx-large">
+                    <lightning-icon 
+                        icon-name="action:approval" 
+                        size="large" 
+                        alternative-text="System Healthy">
+                    </lightning-icon>
+                    <h2 class="slds-text-heading_medium slds-var-m-top_medium slds-text-color_success">
+                        System is Healthy!
+                    </h2>
+                    <p class="slds-text-color_weak slds-var-m-top_small">
+                        Grab a coffee. There are currently no active high-severity errors.
+                    </p>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
