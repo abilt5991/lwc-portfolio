@@ -1,41 +1,49 @@
 <template>
-    <lightning-card title="High Severity System Alerts" icon-name="standard:system_and_global_variable">
+    <div class="slds-box slds-theme_default slds-p-around_large card-wrapper">
         
-        <lightning-button-icon 
-            icon-name="utility:refresh" 
-            slot="actions" 
-            alternative-text="Refresh Feed" 
-            onclick={handleRefresh}>
-        </lightning-button-icon>
-
-        <div class="slds-var-p-around_medium">
-            
-            <template if:true={hasLogs}>
-                <lightning-datatable
-                    key-field="Id"
-                    data={logs}
-                    columns={columns}
-                    hide-checkbox-column
-                    onrowaction={handleRowAction}>
-                </lightning-datatable>
-            </template>
-
-            <template if:false={hasLogs}>
-                <div class="slds-text-align_center slds-var-p-around_xx-large">
-                    <lightning-icon 
-                        icon-name="action:approval" 
-                        size="large" 
-                        alternative-text="System Healthy">
-                    </lightning-icon>
-                    <h2 class="slds-text-heading_medium slds-var-m-top_medium slds-text-color_success">
-                        System is Healthy!
-                    </h2>
-                    <p class="slds-text-color_weak slds-var-m-top_small">
-                        Grab a coffee. There are currently no active high-severity errors.
-                    </p>
-                </div>
-            </template>
-
+        <div class="slds-m-bottom_medium">
+            <h2 class="slds-text-heading_medium">High Severity</h2>
+            <p class="slds-text-color_weak slds-text-body_small slds-m-top_xxx-small">Critical errors requiring immediate resolution</p>
         </div>
-    </lightning-card>
+
+        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-m-bottom_medium">
+            
+            <div class="chart-wrapper slds-m-right_large">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <path class="circle"
+                        stroke-dasharray={chartDashArray}
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <text x="18" y="17" class="total-number slds-text-color_default">{totalCount}</text>
+                    <text x="18" y="25" class="total-label">Total Logs</text>
+                </svg>
+            </div>
+
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-m-bottom_small">
+                    <span class="slds-badge slds-theme_success slds-p-horizontal_medium slds-p-vertical_xx-small badge-min-width">
+                        {activeCount} Active
+                    </span>
+                </div>
+                <div>
+                    <span class="slds-badge progress-badge slds-p-horizontal_medium slds-p-vertical_xx-small badge-min-width">
+                        {progressCount} In-Progress
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-grid_align-center slds-m-top_large">
+            <lightning-button 
+                variant="brand-outline" 
+                label="View Logs" 
+                onclick={navigateToLogs}
+                class="rounded-button">
+            </lightning-button>
+        </div>
+
+    </div>
 </template>

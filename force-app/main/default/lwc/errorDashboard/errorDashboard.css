@@ -1,0 +1,70 @@
+:host {
+    display: block;
+    --slds-c-card-spacing-inline-start: 0;
+    --slds-c-card-spacing-inline-end: 0;
+}
+
+/* Constrain width and force the heavily rounded corners from the image */
+.card-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 1.5rem; 
+}
+
+/* --- SVG Chart Sizing and Strokes --- */
+.chart-wrapper {
+    width: 140px;
+}
+
+.circular-chart {
+    display: var(--slds-circular-chart-display, block);
+    max-width: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: var(--slds-g-color-neutral-base-90, #f3f2f2);
+    stroke-width: 3;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--slds-g-color-success-base-50, #2e844a);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease;
+}
+
+/* SVG Text - Note: font sizes here refer to the 36x36 SVG coordinate system */
+.total-number {
+    font-size: 8px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.total-label {
+    font-size: 2px;
+    text-anchor: middle;
+    fill: var(--slds-g-color-neutral-base-50, #747474);
+    text-transform: uppercase;
+}
+
+/* --- Badges and Buttons --- */
+
+/* Uniform width for the pills */
+.badge-min-width {
+    min-width: 110px;
+    text-align: var(--slds-c-badge-text-align, center);
+    font-size: var(--sds-g-font-size-3, 0.75rem);
+}
+
+/* SLDS lacks a native "blue" badge, so we map to SLDS brand tokens */
+.progress-badge {
+    background-color: var(--slds-g-color-brand-base-90, #e8f3fe);
+    color: var(--slds-g-color-brand-base-50, #0176d3);
+}
+
+/* Force lightning-button to have rounded pill edges */
+.rounded-button {
+    --sds-c-button-radius-border: 1.5rem; 
+}
